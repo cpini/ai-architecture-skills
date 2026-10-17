@@ -1,0 +1,20 @@
+# Scenario from an incident. Adapt the field names to your suite's format.
+- id: inc-[ID]-[short-name]
+  provenance: "incident [ID], [YYYY-MM-DD], anonymised, severity [critical|major]"
+  mode: scripted            # labelled | snapshot | scripted | simulated
+  family: [failure family, e.g. indirect_injection]
+  context:                  # the state the system saw: records, config, limits (anonymised)
+    record: {id: [anonymised id], type: [record type], fields: {}}
+    config: {}
+  input:                    # fewest turns or items that still trigger the failure
+    - {by: user, text: "[triggering message, phrasing preserved]"}
+    - {by: user, attachment: "[fixture file with the trigger preserved]"}
+  expect:
+    allowed: [[allowed actions or outputs]]
+    forbid_codes: [[failure code]]
+  tags: [incident, regression]
+
+# Variants: same trigger, different surface. Keep at least one held out.
+- id: inc-[ID]-[short-name]-v2
+  provenance: "variant of incident [ID]: [paraphrase | language | currency | record type]"
+  # ...
