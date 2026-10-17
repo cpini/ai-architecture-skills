@@ -1,4 +1,4 @@
-# AI architecture skills for Claude
+# AI architecture Skills for Claude
 
 Fifteen Claude skills that take an AI use case from first conversation to production
 operation: framing the outcome, interviewing stakeholders, triaging feasibility and risk,
@@ -70,20 +70,17 @@ output doesn't exist yet (it drafts what it needs and marks the gaps).
 
 ## The worked example
 
-All fifteen examples follow one **fictional** case: a claims assistant at Larkspur Home Insurance,
-an invented UK insurer. The assistant reads customers' messages, photos and receipts, answers
+All fifteen examples follow one **fictional** case: a claims assistant for an invented UK insurer. The assistant reads customers' messages, photos and receipts, answers
 cover questions from the policy wording, and settles small contents claims. One product
 combines four system types (extraction, retrieval, routing and an agent that pays money), so
 the examples show each skill handling more than one kind of system. The case follows a
 prototype through discovery, an options decision, redesign, evaluation, a pilot incident, the
 decision to widen the pilot, and a second product (a handler copilot with a shared MCP server).
-Larkspur, its people, systems and figures are invented; any resemblance to a real organisation
-is coincidental.
+The UK insurer, its people, systems and figures are invented; any resemblance to a real organisation is coincidental.
 
-## Coverage of the Claude Certified Architect – Professional domains
+## Coverage of the Claude's Architectural domains
 
-The skills were written to cover the practice areas in the Claude Certified Architect –
-Professional exam guide. They are working tools, not exam material.
+The skills were written to cover Claude's architectural domains and are real working tools.
 
 | Domain | Skills |
 |---|---|
@@ -118,7 +115,7 @@ by name ("use ai-feasibility-risk-triage on this card").
 
 ## About the author
 
-Written by Cristian Pini, enterprise architect and fractional CTO at Meta Model Technology.
+Written by Cristian Pini, architect, engineer and technology leader.
 
 <a href="https://www.credly.com/badges/5c9b3813-caf7-43e1-8fba-bbdf6b2afd4d"><img src="https://images.credly.com/images/7583afbc-4aab-4c7d-8af4-d9af72786ab3/linkedin_thumb_blob" alt="Claude Certified Architect – Professional badge" width="120"></a>
 
@@ -127,4 +124,4 @@ Anthropic.
 
 ## Licence
 
-MIT. See [LICENSE](LICENSE).
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
