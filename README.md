@@ -98,17 +98,51 @@ current documentation.
 
 ## Installing
 
-**Claude Code:** copy or symlink skill folders into `~/.claude/skills/` (for you) or a
-project's `.claude/skills/` (shared with that repo):
+### Claude Code: all 15 skills as a plugin (recommended)
+
+This repository is a plugin marketplace. Add it once and install every skill in one step:
 
 ```bash
-git clone <this repo> && cd <repo>
-mkdir -p ~/.claude/skills
-cp -R skills/ai-* ~/.claude/skills/
+claude plugin marketplace add cpini/ai-architecture-skills
+claude plugin install ai-architecture-skills@cpini
 ```
 
-**Claude apps:** add a skill from the skills settings by uploading its folder as a ZIP, or
-ask Claude to propose it to your account.
+Plugin skills carry the plugin name as a prefix, so to call one by name use
+`/ai-architecture-skills:ai-use-case-framing`. Claude also picks skills up automatically
+from their descriptions. To get updates later:
+
+```bash
+claude plugin marketplace update cpini
+claude plugin update ai-architecture-skills@cpini
+```
+
+### Claude Code: individual skills
+
+To pick and choose, copy skill folders into `~/.claude/skills/` (for you) or a project's
+`.claude/skills/` (shared with that repo):
+
+```bash
+git clone https://github.com/cpini/ai-architecture-skills.git
+cd ai-architecture-skills
+mkdir -p ~/.claude/skills
+cp -R skills/ai-use-case-framing ~/.claude/skills/   # or skills/ai-* for all of them
+```
+
+### Claude apps
+
+Upload skills one at a time from the skills settings, as a ZIP of each skill folder. To build
+one ZIP per skill:
+
+```bash
+cd skills
+mkdir -p ../dist
+for d in ai-*/; do zip -r "../dist/${d%/}.zip" "${d%/}" -x "*.DS_Store"; done
+```
+
+Each ZIP must contain the skill folder (with `SKILL.md`, `references/` and `templates/`)
+at its top level.
+
+### Using them
 
 Claude picks a skill up from its `description` when a request matches, or you can ask for one
 by name ("use ai-feasibility-risk-triage on this card").

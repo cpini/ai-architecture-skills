@@ -1,0 +1,14 @@
+{
+  "name": "cpini",
+  "description": "Claude skills for AI architects by Cristian Pini",
+  "owner": {
+    "name": "Cristian Pini"
+  },
+  "plugins": [
+    {
+      "name": "ai-architecture-skills",
+      "source": ".",
+      "description": "15 domain-neutral skills for designing, evaluating and operating AI systems"
+    }
+  ]
+}
